@@ -11,7 +11,7 @@
    </a>
 </div>
 	
-<div align="center">
+
 <h3>===== Tecnologias utilizadas =====</h3>
 ## Back end                 |      ## Front end                       |           ## Implantação em produção
 - Java                      |    - HTML / CSS / JS / TypeScript       |           - Back end: Heroku
@@ -19,7 +19,6 @@
 - JPA / Hibernate           |    - React Native                       |           - Banco de dados: Postgresql
 - Maven                     |    - Apex Charts                        |
 
-</div>
 	
 	
 <div align="center">
