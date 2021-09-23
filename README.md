@@ -31,8 +31,8 @@
 </div>
 	
 	
-
-<h3  align="center">===== Contribuidores =====</h3>
+<div align="center">
+<h3>===== Contribuidores =====</h3>
 <table>
   <tr>
     <td align="center"><a href="https://github.com/davansep"><img style="border-radius: 70%;" src="https://avatars.githubusercontent.com/u/81379748?v=4" width="100px;" alt=""/><br /><sub><b>Priscila Davanse</b></sub></a><br /><a href="https://www.linkedin.com/in/prisciladavanse/">:cat::purple_heart::cat:</br><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a></td>
@@ -45,3 +45,4 @@
     
   </tr>
 </table>
+</div>
