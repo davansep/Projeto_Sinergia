@@ -11,7 +11,7 @@
    </a>
 </div>
 	
-<div align="rigth">
+<div align="center">
 # ===== Tecnologias utilizadas ======
 ## Back end
 - Java
