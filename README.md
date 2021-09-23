@@ -12,22 +12,13 @@
 </div>
 	
 <div align="center">
-# ===== Tecnologias utilizadas ======
-## Back end
-- Java
-- Spring Boot
-- JPA / Hibernate
-- Maven
-## Front end
-- HTML / CSS / JS / TypeScript
-- ReactJS
-- React Native
-- Apex Charts
-- Expo
-## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
+<h3>===== Tecnologias utilizadas =====</h3>
+## Back end                 |      ## Front end                       |           ## Implantação em produção
+- Java                      |    - HTML / CSS / JS / TypeScript       |           - Back end: Heroku
+- Spring Boot               |    - ReactJS                            |           - Front end web: Netlify
+- JPA / Hibernate           |    - React Native                       |           - Banco de dados: Postgresql
+- Maven                     |    - Apex Charts                        |
+
 </div>
 	
 	
