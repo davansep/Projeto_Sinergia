@@ -14,7 +14,7 @@
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/davansep"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/81379748?v=4" width="100px;" alt=""/><br /><sub><b>Priscila Davanse</b></sub></a><br /><a href="https://www.linkedin.com/in/prisciladavanse/" title="LinkedIn">![image](https://user-images.githubusercontent.com/81379748/134551175-58ba5f2c-88db-4bff-ab58-75c0f662e47d.png)</a></td>
+    <td align="center"><a href="https://github.com/davansep"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/81379748?v=4" width="100px;" alt=""/><br /><sub><b>Priscila Davanse</b></sub></a><br /><a href="https://www.linkedin.com/in/prisciladavanse/" title="LinkedIn"></a></td>
     
   </tr>
 </table>
