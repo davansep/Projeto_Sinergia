@@ -1,5 +1,5 @@
 
-<h4 align="center"> 
+<h2 align="center"> 
   # Projeto_Integrador
-	# 🚧  Em construção...  🚧
-</h4>
+	 🚧  Em construção...  🚧
+</h2>
