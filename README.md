@@ -9,6 +9,7 @@
   <a href="https://odsbrasil.gov.br/objetivo/objetivo?n=7">
     <img src="https://raw.githubusercontent.com/davansep/Projeto_Integrador/main/assets/ods7.png" width="110px">
    </a>
+</div>
 	
 <div align="rigth">
 # ===== Tecnologias utilizadas ======
