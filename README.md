@@ -3,7 +3,7 @@
 	 🚧  Em construção...  🚧
 </h4>
 <h3  align="center">Desenvolvido para Generation Brasil </h3>
-<p align="center"> Objetivo 7 - Energia Limpa e Acessível</p>
+<p align="center"> Objetivo 7 - Garantir acesso à energia barata, confiável, sustentável e renovável para todes!</p>
 
 <div align="center">
   <a href="https://odsbrasil.gov.br/objetivo/objetivo?n=7">
