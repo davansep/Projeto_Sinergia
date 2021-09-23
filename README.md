@@ -10,6 +10,22 @@
     <img src="https://raw.githubusercontent.com/davansep/Projeto_Integrador/main/assets/ods7.png" width="110px">
    </a>
 	
+===== Tecnologias utilizadas =====
+## Back end
+- Java
+- Spring Boot
+- JPA / Hibernate
+- Maven
+## Front end
+- HTML / CSS / JS / TypeScript
+- ReactJS
+- React Native
+- Apex Charts
+- Expo
+## Implantação em produção
+- Back end: Heroku
+- Front end web: Netlify
+- Banco de dados: Postgresql
 
 <h3  align="center">===== Contribuidores =====</h3>
 <table>
