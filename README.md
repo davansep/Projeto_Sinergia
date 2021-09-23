@@ -12,7 +12,7 @@
 </div>
 	
 
-# Tecnologias utilizadas
+<h3>===== Tecnologias utilizadas =====</h3>
 ## Back end
 - Java
 - Spring Boot
