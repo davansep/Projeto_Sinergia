@@ -20,17 +20,13 @@
 - Maven
 ## Front end
 - HTML / CSS / JS / TypeScript
-- ReactJS
-- React Native
-- Apex Charts
-- Expo
+
 ## Implantação em produção
 - Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
+- Front end web: 
+- Banco de dados: 
 
-
-	
+<br>	
 <div align="center">
 <h3>===== Contribuidores =====</h3>
 <table>
