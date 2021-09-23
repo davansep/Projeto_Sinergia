@@ -7,5 +7,5 @@
 
 <div align="center">
   <a href="https://odsbrasil.gov.br/objetivo/objetivo?n=7">
-    <img src="https://user-images.githubusercontent.com/72994902/132442775-f3101cb7-a478-4a65-bd17-7970373b641e.png" width="110px">
+    <img src="https://raw.githubusercontent.com/davansep/Projeto_Integrador/main/assets/ods7.png" width="110px">
    </a>
