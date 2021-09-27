@@ -1,4 +1,4 @@
-<h2 align="center"> Projeto Integrador</h2>
+<h2 align="center"> Projeto Sinergia</h2>
 <h4 align="center"> 
 	 🚧  Em construção...  🚧
 </h4>
