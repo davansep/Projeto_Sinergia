@@ -1,13 +1,13 @@
 package br.com.sinergia.Sinergia.controller;
 
 import java.util.List;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import br.com.sinergia.Sinergia.model.Tema;
 import br.com.sinergia.Sinergia.repository.TemaRepository;
 
@@ -49,11 +49,38 @@ public class TemaController {
 	 * @return FindByNome, BuscarPeloNome
 	 * @since 1.0
 	 */
-	// buscarPorNome
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Tema>> getByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
-
 	}
 
+	/**
+	 * @author Priscila
+	 * @return Salvar tema
+	 * @since 1.0
+	 */
+	@PostMapping
+	public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
+	}
+
+	/**
+	 * @author Priscila
+	 * @return Atualizar tema
+	 * @since 1.0
+	 */
+	@PutMapping
+	public ResponseEntity<Tema> put(@Valid @RequestBody Tema tema) {
+		return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
+	}
+
+	/**
+	 * @author Priscila
+	 * @return Deletar tema
+	 * @since 1.0
+	 */
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable Long idCategoria) {
+		repository.deleteById(idCategoria);
+	}
 }
