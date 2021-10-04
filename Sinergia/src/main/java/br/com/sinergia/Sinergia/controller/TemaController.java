@@ -80,7 +80,7 @@ public class TemaController {
 	 * @since 1.0
 	 */
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long idCategoria) {
-		repository.deleteById(idCategoria);
+	public void delete(@PathVariable Long id) {
+		repository.deleteById(id);
 	}
 }
