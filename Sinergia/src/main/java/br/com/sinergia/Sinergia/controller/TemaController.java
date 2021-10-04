@@ -83,4 +83,5 @@ public class TemaController {
 	public void delete(@PathVariable Long id) {
 		repository.deleteById(id);
 	}
+	
 }
