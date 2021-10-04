@@ -36,6 +36,7 @@ public class TemaController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
+	
 	/**
 	 * @author Joao
 	 * @return FindById, BuscarPeloId
