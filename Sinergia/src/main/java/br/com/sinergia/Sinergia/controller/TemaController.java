@@ -16,7 +16,7 @@ import br.com.sinergia.Sinergia.repository.TemaRepository;
  * @version 1.0
  */
 @RestController
-@RequestMapping("/tema")
+@RequestMapping("/temas")
 @CrossOrigin("*")
 public class TemaController {
 
@@ -46,12 +46,12 @@ public class TemaController {
 
 	/**
 	 * @author Leonardo
-	 * @return FindByNome, BuscarPeloNome
+	 * @return FindByTema, BuscarPeloTema
 	 * @since 1.0
 	 */
-	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Tema>> getByNome(@PathVariable String nome) {
-		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
+	@GetMapping("/tema/{tema}")
+	public ResponseEntity<List<Tema>> getByTema(@PathVariable String tema) {
+		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
 	}
 
 	/**
@@ -80,8 +80,8 @@ public class TemaController {
 	 * @since 1.0
 	 */
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long id) {
-		repository.deleteById(id);
+	public void delete(@PathVariable Long idTema) {
+		repository.deleteById(idTema);
 	}
-	
+
 }

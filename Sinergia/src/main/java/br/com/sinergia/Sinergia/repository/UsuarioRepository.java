@@ -31,5 +31,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	 * @author Priscila
 	 * @since 1.0
 	 */
-	public List<Usuario> findAllByNomeContainingIgnoreCase(String nome);
+	public List<Usuario> findAllByNomeCompletoContainingIgnoreCase(String nome);
 }

@@ -6,10 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * @author Victor
@@ -20,7 +24,7 @@ public class Postagem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_Postagem;
+	private Long idPostagem;
 
 	@NotBlank
 	@Size(min = 5, max = 50)
@@ -31,17 +35,35 @@ public class Postagem {
 	private String conteudo;
 
 	@NotBlank
-	private Long link_midia;
+	private Long linkMidia;
 
 	@DateTimeFormat
 	private Date data;
 
-	public Long getId_Postagem() {
-		return id_Postagem;
+	/**
+	 * @author Amanda
+	 * @since 1.0
+	 */
+	@ManyToOne
+	@JoinColumn(name = "fk_tema")
+	@JsonIgnoreProperties({ "postagens" })
+	private Tema temaRelacionado;
+
+	/**
+	 * @author Amanda
+	 * @since 1.0
+	 */
+	@ManyToOne
+	@JoinColumn(name = "fk_usuario")
+	@JsonIgnoreProperties({ "postagens" })
+	private Usuario usuarioRelacionado;
+
+	public Long getIdPostagem() {
+		return idPostagem;
 	}
 
-	public void setId_Postagem(Long id_Postagem) {
-		this.id_Postagem = id_Postagem;
+	public void setIdPostagem(Long idPostagem) {
+		this.idPostagem = idPostagem;
 	}
 
 	public String getTitulo() {
@@ -60,12 +82,12 @@ public class Postagem {
 		this.conteudo = conteudo;
 	}
 
-	public Long getLink_midia() {
-		return link_midia;
+	public Long getLinkMidia() {
+		return linkMidia;
 	}
 
-	public void setLink_midia(Long link_midia) {
-		this.link_midia = link_midia;
+	public void setLinkMidia(Long linkMidia) {
+		this.linkMidia = linkMidia;
 	}
 
 	public Date getData() {
@@ -75,4 +97,22 @@ public class Postagem {
 	public void setData(Date data) {
 		this.data = data;
 	}
+
+	public Tema getTemaRelacionado() {
+		return temaRelacionado;
+	}
+
+	public void setTemaRelacionado(Tema temaRelacionado) {
+		this.temaRelacionado = temaRelacionado;
+	}
+
+	public Usuario getUsuarioRelacionado() {
+		return usuarioRelacionado;
+	}
+
+	public void setUsuarioRelacionado(Usuario usuarioRelacionado) {
+		this.usuarioRelacionado = usuarioRelacionado;
+
+	}
+
 }

@@ -21,41 +21,35 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository repository;
 
-	// buscarTodesUsuarios
 	@GetMapping
 	public ResponseEntity<List<Usuario>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
-	// buscarPorId_Usuario
 	@GetMapping("/{id}")
-	public ResponseEntity<Usuario> getById(@PathVariable Long id_usuario) {
-		return repository.findById(id_usuario).map(resp -> ResponseEntity.ok(resp))
+	public ResponseEntity<Usuario> getById(@PathVariable Long idUsuario) {
+		return repository.findById(idUsuario).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 
-	// buscarPorNome
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Usuario>> getByNome(@PathVariable String nome_completo) {
-		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome_completo));
+	public ResponseEntity<List<Usuario>> getByNome(@PathVariable String nome) {
+		return ResponseEntity.ok(repository.findAllByNomeCompletoContainingIgnoreCase(nome));
 	}
 
-	// salvarUsuario
 	@PostMapping
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario novoUsuario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(novoUsuario));
 	}
 
-	// atualizarUsuario
 	@PutMapping
 	public ResponseEntity<Usuario> put(@Valid @RequestBody Usuario novoUsuario) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(novoUsuario));
 	}
 
-	// deletarUsuario
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long id_usuario) {
-		repository.deleteById(id_usuario);
+	public void delete(@PathVariable Long idUsuario) {
+		repository.deleteById(idUsuario);
 	}
 
 }
