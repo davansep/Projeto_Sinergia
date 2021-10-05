@@ -14,12 +14,13 @@ public class Usuario {
 	/**
 	 * Classe do Usuario.
 	 * 
-	 * @author Joao
+	 * @author João
 	 * @since 1.0
-	 *
 	 */
 
-	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id_usuario;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id_usuario;
 
 	@NotBlank
 	private String nome_completo;
