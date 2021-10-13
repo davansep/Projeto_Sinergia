@@ -60,7 +60,7 @@ public class TemaController {
 	 * @since 1.0
 	 */
 	@PostMapping
-	public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema) {
+	public ResponseEntity<Tema> postar(@Valid @RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 
@@ -70,7 +70,7 @@ public class TemaController {
 	 * @since 1.0
 	 */
 	@PutMapping
-	public ResponseEntity<Tema> put(@Valid @RequestBody Tema tema) {
+	public ResponseEntity<Tema> atualizar(@Valid @RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
 	}
 

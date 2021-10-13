@@ -44,17 +44,17 @@ public class PostagemController {
 	}
 
 	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<List<Postagem>> getByTema(@PathVariable String titulo) {
+	public ResponseEntity<List<Postagem>> getByTitulo(@PathVariable String titulo) {
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 
 	@PostMapping
-	public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem) {
+	public ResponseEntity<Postagem> postar(@Valid @RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
 	}
 
 	@PutMapping
-	public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem) {
+	public ResponseEntity<Postagem> atualizar(@Valid @RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}
 
