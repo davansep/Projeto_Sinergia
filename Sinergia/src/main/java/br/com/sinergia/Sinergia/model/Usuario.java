@@ -18,8 +18,9 @@ public class Usuario {
 	 * @since 1.0
 	 *
 	 */
-
-	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id_usuario;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id_usuario;
 
 	@NotBlank
 	private String nome_completo;
@@ -28,7 +29,7 @@ public class Usuario {
 	private String email;
 
 	@NotBlank
-	@Size(min = 5, max = 10)
+	@Size(min = 5, max = 15)
 	private String senha;
 
 	public Long getIdUsuario() {
