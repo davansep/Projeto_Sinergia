@@ -42,7 +42,7 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Usuario> getById(@PathVariable Long idUsuario) {
+	public ResponseEntity<Usuario> getById(@PathVariable (value = "id") Long idUsuario) {
 		return repository.findById(idUsuario).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
@@ -52,29 +52,22 @@ public class UsuarioController {
 		return ResponseEntity.ok(repository.findAllByNomeCompletoContainingIgnoreCase(nome));
 	}
 
-	/**
-	 * @author Amanda
-	 * @since 1.0
-	 */
 	@PostMapping("/cadastro")
-	public ResponseEntity<Usuario> cadastrar(@Valid @RequestBody Usuario novoUsuario) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(novoUsuario));
+	public ResponseEntity<Object> salvar(@Valid @RequestBody Usuario novoUsuario) {
+		return service.cadastrarUsuario(novoUsuario).map(resp -> ResponseEntity.status(201).body(resp))
+				.orElseThrow(() -> {
+					throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+							"Email existente, cadastre outro email!.");
+				});
+
 	}
-	
-	/**
-	 * @author Amanda
-	 * @since 1.0
-	 */
-	@PutMapping("/credenciais")
-	public ResponseEntity<CredenciaisDTO> credenciais(@Valid @RequestBody UsuarioLoginDTO usuarioParaAutenticar) {
+
+	@PostMapping("/login")
+	public ResponseEntity<CredenciaisDTO> logar(@Valid @RequestBody UsuarioLoginDTO usuarioParaAutenticar) {
 		return service.pegarCredenciais(usuarioParaAutenticar);
 	}
-	
-	/**
-	 * @author Amanda
-	 * @since 1.0
-	 */
-	@PutMapping("/atualizar")
+
+	/*@PutMapping("/atualizar")
 	public ResponseEntity<Usuario> atualizar(@Valid @RequestBody Usuario novoUsuario) {
 		return service.atualizarUsuario(novoUsuario).map(resp -> ResponseEntity.status(201).body(resp))
 				.orElseThrow(() -> {
@@ -82,15 +75,10 @@ public class UsuarioController {
 							"Necessario que passe um idUsuario valido para alterar!.");
 				});
 
-	}
-
-	@PutMapping
-	public ResponseEntity<Usuario> put(@Valid @RequestBody Usuario novoUsuario) {
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(novoUsuario));
-	}
-
+	}*/
+	
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long idUsuario) {
+	public void delete(@PathVariable (value = "id") Long idUsuario) {
 		repository.deleteById(idUsuario);
 	}
 

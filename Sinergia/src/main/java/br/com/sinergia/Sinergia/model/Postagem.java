@@ -34,7 +34,6 @@ public class Postagem {
 	@Size(min = 1, max = 300)
 	private String conteudo;
 
-	@NotBlank
 	private Long linkMidia;
 
 	@DateTimeFormat

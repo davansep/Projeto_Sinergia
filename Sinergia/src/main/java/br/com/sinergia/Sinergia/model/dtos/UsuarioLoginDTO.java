@@ -13,6 +13,7 @@ public class UsuarioLoginDTO {
 	@NotBlank
 	@Email(message = "campo deve ser um email")
 	private String email;
+	
 	@NotBlank
 	@Size(min = 5, max = 15, message = "senha deve ter de 5 à 15 caracteres")
 	private String senha;

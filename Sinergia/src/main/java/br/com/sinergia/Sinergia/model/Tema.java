@@ -30,8 +30,8 @@ public class Tema {
 	@NotBlank
 	private String descricao;
 
-	@NotBlank
-	private boolean status;
+	/*@NotBlank
+	private boolean status;*/
 
 	/**
 	 * @author Amanda
@@ -65,13 +65,13 @@ public class Tema {
 		this.descricao = descricao;
 	}
 
-	public boolean isStatus() {
+	/*public boolean isStatus() {
 		return status;
 	}
 
 	public void setStatus(boolean status) {
 		this.status = status;
-	}
+	}*/
 
 	public List<Postagem> getPostagens() {
 		return postagens;
