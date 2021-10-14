@@ -23,6 +23,9 @@ public class UserDetailsImplements implements UserDetails {
 		this.senha = usuario.getSenha();
 	}
 
+	public UserDetailsImplements() {
+	}
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub

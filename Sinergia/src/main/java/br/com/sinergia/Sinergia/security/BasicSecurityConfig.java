@@ -24,10 +24,12 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/v1/usuario/salvar").permitAll()
-				.antMatchers(HttpMethod.PUT, "/api/v1/usuario/credenciais").permitAll().anyRequest().authenticated()
-				.and().httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-				.and().cors().and().csrf().disable();
+		http.authorizeRequests()
+				.antMatchers(HttpMethod.POST, "/usuarios/cadastro").permitAll()
+				.antMatchers(HttpMethod.POST, "/usuarios/login").permitAll()
+				.anyRequest().authenticated().and()
+				.httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.cors().and().csrf().disable();
 
 	}
 
@@ -35,8 +37,9 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(service);
 
-		auth.inMemoryAuthentication().withUser("boaz").password(senhaEncoder().encode("boaz"))
-				.authorities("ROLE_ADMIN");
+		  auth.inMemoryAuthentication().withUser("root").password(senhaEncoder().encode
+		  ("root")) .authorities("ROLE_ADMIN");
+		 
 	}
 
 }
