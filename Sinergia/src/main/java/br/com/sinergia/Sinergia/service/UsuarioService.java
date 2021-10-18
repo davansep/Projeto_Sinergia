@@ -41,6 +41,16 @@ public class UsuarioService {
 		});
 
 	}
+	public Optional<Usuario> atualizarUsuario(Usuario usuarioParaAtualizar) {
+		return repository.findById(usuarioParaAtualizar.getIdUsuario()).map(resp -> {
+			resp.setNomeCompleto(usuarioParaAtualizar.getNomeCompleto());
+			resp.setSenha(encriptadorDeSenha(usuarioParaAtualizar.getSenha()));
+			return Optional.ofNullable(repository.save(resp));
+		}).orElseGet(() -> {
+			return Optional.empty();
+		});
+
+	}
 
 	private static String gerarToken(String email, String senha) {
 		String estrutura = email + ":" + senha;

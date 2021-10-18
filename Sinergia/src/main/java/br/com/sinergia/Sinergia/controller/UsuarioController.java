@@ -23,6 +23,7 @@ import br.com.sinergia.Sinergia.model.dtos.CredenciaisDTO;
 import br.com.sinergia.Sinergia.model.dtos.UsuarioLoginDTO;
 import br.com.sinergia.Sinergia.repository.UsuarioRepository;
 import br.com.sinergia.Sinergia.service.UsuarioService;
+import io.swagger.annotations.Api;
 
 /**
  * @author Leonardo
@@ -30,6 +31,7 @@ import br.com.sinergia.Sinergia.service.UsuarioService;
  */
 @RestController
 @RequestMapping("/usuarios")
+@Api(tags = "Controlador de Usuario", description = "Utilitario de Usuarios")
 @CrossOrigin("*")
 public class UsuarioController {
 
@@ -37,23 +39,23 @@ public class UsuarioController {
 	private @Autowired UsuarioService service;
 
 	@GetMapping
-	public ResponseEntity<List<Usuario>> getAll() {
+	public ResponseEntity<List<Usuario>> buscarTodes() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Usuario> getById(@PathVariable (value = "id") Long idUsuario) {
+	public ResponseEntity<Usuario> buscarID(@PathVariable (value = "id") Long idUsuario) {
 		return repository.findById(idUsuario).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Usuario>> getByNome(@PathVariable String nome) {
+	public ResponseEntity<List<Usuario>> buscarNome(@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeCompletoContainingIgnoreCase(nome));
 	}
 
 	@PostMapping("/cadastro")
-	public ResponseEntity<Object> salvar(@Valid @RequestBody Usuario novoUsuario) {
+	public ResponseEntity<Object> cadastrar(@Valid @RequestBody Usuario novoUsuario) {
 		return service.cadastrarUsuario(novoUsuario).map(resp -> ResponseEntity.status(201).body(resp))
 				.orElseThrow(() -> {
 					throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
@@ -67,18 +69,18 @@ public class UsuarioController {
 		return service.pegarCredenciais(usuarioParaAutenticar);
 	}
 
-	/*@PutMapping("/atualizar")
+	@PutMapping("/atualizar")
 	public ResponseEntity<Usuario> atualizar(@Valid @RequestBody Usuario novoUsuario) {
 		return service.atualizarUsuario(novoUsuario).map(resp -> ResponseEntity.status(201).body(resp))
 				.orElseThrow(() -> {
 					throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-							"Necessario que passe um idUsuario valido para alterar!.");
+							"Necessário que passe um idUsuario valido para alterar!.");
 				});
 
-	}*/
+	}
 	
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable (value = "id") Long idUsuario) {
+	public void deletar(@PathVariable (value = "id") Long idUsuario) {
 		repository.deleteById(idUsuario);
 	}
 
