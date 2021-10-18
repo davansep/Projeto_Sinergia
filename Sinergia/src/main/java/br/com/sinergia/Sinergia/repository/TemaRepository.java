@@ -3,6 +3,7 @@ package br.com.sinergia.Sinergia.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import br.com.sinergia.Sinergia.model.Tema;
 
@@ -10,6 +11,7 @@ import br.com.sinergia.Sinergia.model.Tema;
  * @author Amanda
  * @version 1.0
  */
+@Repository
 public interface TemaRepository extends JpaRepository<Tema, Long> {
 
 	/**

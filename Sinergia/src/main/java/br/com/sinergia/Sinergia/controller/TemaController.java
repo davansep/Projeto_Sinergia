@@ -1,15 +1,25 @@
 package br.com.sinergia.Sinergia.controller;
 
 import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sinergia.Sinergia.model.Tema;
 import br.com.sinergia.Sinergia.repository.TemaRepository;
+import io.swagger.annotations.Api;
 
 /**
  * @author Team Sinergia
@@ -17,6 +27,7 @@ import br.com.sinergia.Sinergia.repository.TemaRepository;
  */
 @RestController
 @RequestMapping("/temas")
+@Api(tags = "Controlador de Tema", description = "Utilitario de Temas")
 @CrossOrigin("*")
 public class TemaController {
 
@@ -29,7 +40,7 @@ public class TemaController {
 	 * @since 1.0
 	 */
 	@GetMapping
-	public ResponseEntity<List<Tema>> getAll() {
+	public ResponseEntity<List<Tema>> buscarTodos() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
@@ -38,8 +49,8 @@ public class TemaController {
 	 * @return FindById, BuscarPeloId
 	 * @since 1.0
 	 */
-	@GetMapping("/{id}")
-	public ResponseEntity<Tema> getById(@PathVariable Long idTema) {
+	@GetMapping("/{id_tema}")
+	public ResponseEntity<Tema> buscarID(@PathVariable(value = "id_tema") Long idTema) {
 		return repository.findById(idTema).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
@@ -50,7 +61,7 @@ public class TemaController {
 	 * @since 1.0
 	 */
 	@GetMapping("/tema/{tema}")
-	public ResponseEntity<List<Tema>> getByTema(@PathVariable String tema) {
+	public ResponseEntity<List<Tema>> buscarTema(@PathVariable String tema) {
 		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
 	}
 
@@ -79,8 +90,8 @@ public class TemaController {
 	 * @return Deletar tema
 	 * @since 1.0
 	 */
-	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long idTema) {
+	@DeleteMapping("/{id_tema}")
+	public void deletar(@PathVariable(value = "id_tema") Long idTema) {
 		repository.deleteById(idTema);
 	}
 
