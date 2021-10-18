@@ -28,7 +28,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.POST, "/usuarios/cadastro").permitAll()
 				.antMatchers(HttpMethod.POST, "/usuarios/login").permitAll()
 				.antMatchers(HttpMethod.PUT, "/usuarios/atualizar").permitAll()
-				.antMatchers(HttpMethod.OPTIONS).permitAll()
 				.anyRequest().authenticated().and()
 				.httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.cors().and().csrf().disable();
