@@ -2,8 +2,6 @@ package br.com.sinergia.Sinergia.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,9 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author João
@@ -30,7 +29,13 @@ public class Usuario {
 	@NotBlank
 	private String nomeCompleto;
 
-	@Email
+	/**
+	 * @author Leonardo
+	 * @version 1.1
+	 */
+	@ApiModelProperty(example = "email@email.com.br")
+	@NotNull(message = "O atributo email é Obrigatório!")
+	@Email(message = "O atributo email deve ser válido!")
 	private String email;
 
 	@NotBlank
