@@ -9,11 +9,11 @@
 		<version>2.5.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.genFarma</groupId>
-	<artifactId>genFarma</artifactId>
+	<groupId>br.com.sinergia</groupId>
+	<artifactId>Sinergia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>genFarma</name>
-	<description>ProjetoFarmacia</description>
+	<name>Sinergia</name>
+	<description>Projeto Integrador do curso da GenerationBR</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
