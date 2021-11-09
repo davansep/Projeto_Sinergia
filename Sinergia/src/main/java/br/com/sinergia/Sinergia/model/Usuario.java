@@ -42,6 +42,10 @@ public class Usuario {
 	@Size(min = 8, max = 100)
 	private String senha;
 
+	private String tipo;
+
+	private String foto;
+
 	/**
 	 * @author Amanda
 	 * @since 1.0
@@ -88,6 +92,22 @@ public class Usuario {
 
 	public void setPostagens(List<Postagem> postagens) {
 		this.postagens = postagens;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 }

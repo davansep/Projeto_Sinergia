@@ -72,6 +72,8 @@ public class UsuarioService {
 				objetoCredenciaisDTO.setNome(resp.getNomeCompleto());
 				objetoCredenciaisDTO.setEmail(resp.getEmail());
 				objetoCredenciaisDTO.setSenha(resp.getSenha());
+				objetoCredenciaisDTO.setTipo(resp.getTipo());
+				objetoCredenciaisDTO.setFoto(resp.getFoto());
 
 				return ResponseEntity.status(201).body(objetoCredenciaisDTO);
 			} else {
