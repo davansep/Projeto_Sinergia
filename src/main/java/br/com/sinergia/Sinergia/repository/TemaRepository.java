@@ -15,13 +15,23 @@ import br.com.sinergia.Sinergia.model.Tema;
 public interface TemaRepository extends JpaRepository<Tema, Long> {
 
 	/**
-	 * Método para buscar pela coluna 'nome' na tabela 'tema'.
+	 * Método para buscar pela coluna 'tema' na tabela 'tema'.
 	 * 
 	 * @author Amanda
-	 * @param nome
-	 * @return lista com nome
+	 * @param tema
+	 * @return lista com tema
 	 * @since 1.0
 	 */
 	public List<Tema> findAllByTemaContainingIgnoreCase(String tema);
+
+	/**
+	 * Método para buscar pela coluna 'subTema' na tabela 'Tema'.
+	 * 
+	 * @author Victor
+	 * @param subTema
+	 * @return lista com subTema
+	 * @since 1.0
+	 */
+	public List<Tema> findAllBySubTemaContainingIgnoreCase(String subTema);
 
 }

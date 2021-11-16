@@ -66,6 +66,16 @@ public class TemaController {
 	}
 
 	/**
+	 * @author Victor
+	 * @return FindBySubTema, BuscarPeloSubTema
+	 * @since 1.0
+	 */
+	@GetMapping("/tema/{subTema}")
+	public ResponseEntity<List<Tema>> buscarSubTema(@PathVariable String subTema) {
+		return ResponseEntity.ok(repository.findAllBySubTemaContainingIgnoreCase(subTema));
+	}
+
+	/**
 	 * @author Priscila
 	 * @return Salvar tema
 	 * @since 1.0

@@ -28,10 +28,14 @@ public class Tema {
 	private String tema;
 
 	@NotBlank
-	private String descricao;
+	private String subTema;
 
-	/*@NotBlank
-	private boolean status;*/
+	// @NotBlank
+	// private String descricao;
+
+	/*
+	 * @NotBlank private boolean status;
+	 */
 
 	/**
 	 * @author Amanda
@@ -57,21 +61,13 @@ public class Tema {
 		this.tema = tema;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getSubTema() {
+		return subTema;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setSubTema(String subTema) {
+		this.subTema = subTema;
 	}
-
-	/*public boolean isStatus() {
-		return status;
-	}
-
-	public void setStatus(boolean status) {
-		this.status = status;
-	}*/
 
 	public List<Postagem> getPostagens() {
 		return postagens;
