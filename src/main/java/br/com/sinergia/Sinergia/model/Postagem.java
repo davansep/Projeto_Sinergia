@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -36,8 +38,11 @@ public class Postagem {
 
 	private Long linkMidia;
 
-	@DateTimeFormat
-	private Date data;
+	/**
+	 * @author Amanda
+	 * @since 1.0
+	 */
+	private @Temporal(TemporalType.TIMESTAMP) Date date = new java.sql.Date(System.currentTimeMillis());
 
 	/**
 	 * @author Amanda
@@ -89,12 +94,12 @@ public class Postagem {
 		this.linkMidia = linkMidia;
 	}
 
-	public Date getData() {
-		return data;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public Tema getTemaRelacionado() {
