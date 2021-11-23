@@ -48,21 +48,11 @@ public class Postagem {
 	 */
 	private @Temporal(TemporalType.TIMESTAMP) Date date = new java.sql.Date(System.currentTimeMillis());
 
-	/**
-	 * @author Amanda
-	 * @since 1.1
-	 */
-	@NotBlank
 	@ManyToOne
 	@JoinColumn(name = "fk_tema")
 	@JsonIgnoreProperties({ "postagens" })
 	private Tema temaRelacionado;
 
-	/**
-	 * @author Amanda
-	 * @since 1.1
-	 */
-	@NotBlank
 	@ManyToOne
 	@JoinColumn(name = "fk_usuario")
 	@JsonIgnoreProperties({ "postagens" })
