@@ -50,8 +50,9 @@ public class Postagem {
 
 	/**
 	 * @author Amanda
-	 * @since 1.0
+	 * @since 1.1
 	 */
+	@NotBlank
 	@ManyToOne
 	@JoinColumn(name = "fk_tema")
 	@JsonIgnoreProperties({ "postagens" })
@@ -59,8 +60,9 @@ public class Postagem {
 
 	/**
 	 * @author Amanda
-	 * @since 1.0
+	 * @since 1.1
 	 */
+	@NotBlank
 	@ManyToOne
 	@JoinColumn(name = "fk_usuario")
 	@JsonIgnoreProperties({ "postagens" })
