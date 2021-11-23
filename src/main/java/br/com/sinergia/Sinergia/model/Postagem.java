@@ -28,7 +28,6 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPostagem;
 
-	@NotBlank
 	@Size(min = 5, max = 50)
 	private String titulo;
 
