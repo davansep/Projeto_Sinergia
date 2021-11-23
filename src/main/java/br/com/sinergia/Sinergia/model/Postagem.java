@@ -35,8 +35,12 @@ public class Postagem {
 	@NotBlank
 	@Size(min = 1, max = 300)
 	private String conteudo;
-
-	private Long linkMidia;
+	
+	/**
+	 * @author Amanda
+	 * @since 1.1
+	 */
+	private String linkMidia;
 
 	/**
 	 * @author Amanda
@@ -86,11 +90,11 @@ public class Postagem {
 		this.conteudo = conteudo;
 	}
 
-	public Long getLinkMidia() {
+	public String getLinkMidia() {
 		return linkMidia;
 	}
 
-	public void setLinkMidia(Long linkMidia) {
+	public void setLinkMidia(String linkMidia) {
 		this.linkMidia = linkMidia;
 	}
 
