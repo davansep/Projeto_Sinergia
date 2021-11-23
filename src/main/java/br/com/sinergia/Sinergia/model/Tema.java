@@ -27,7 +27,6 @@ public class Tema {
 	@NotBlank
 	private String tema;
 
-	@NotBlank
 	private String subTema;
 
 	// @NotBlank
