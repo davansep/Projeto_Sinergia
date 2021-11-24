@@ -51,7 +51,6 @@ public class Usuario {
 	 * @since 1.0
 	 */
 	@OneToMany(mappedBy = "usuarioRelacionado", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({ "usuarioRelacionado" })
 	private List<Postagem> postagens = new ArrayList<>();
 
 	public Long getIdUsuario() {
