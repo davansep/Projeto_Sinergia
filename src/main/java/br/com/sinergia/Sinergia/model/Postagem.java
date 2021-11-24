@@ -54,7 +54,6 @@ public class Postagem {
 
 	@ManyToOne
 	@JoinColumn(name = "fk_usuario")
-	@JsonIgnoreProperties({ "postagens" })
 	private Usuario usuarioRelacionado;
 
 	public Long getIdPostagem() {
