@@ -56,12 +56,13 @@ public class TemaController {
 	}
 
 	/**
-	 * @author Leonardo
+	 * @author Amanda
 	 * @return FindByTema, BuscarPeloTema
 	 * @since 1.0
 	 */
+	
 	@GetMapping("/tema/{tema}")
-	public ResponseEntity<List<Tema>> buscarTema(@PathVariable String tema) {
+	public ResponseEntity<List<Tema>> buscarPorTema(@PathVariable(value = "tema") String tema) {
 		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
 	}
 
