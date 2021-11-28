@@ -71,7 +71,7 @@ public class TemaController {
 	 * @return FindBySubTema, BuscarPeloSubTema
 	 * @since 1.0
 	 */
-	@GetMapping("/tema/{subTema}")
+	@GetMapping("/tema/subtema/{subTema}")
 	public ResponseEntity<List<Tema>> buscarSubTema(@PathVariable String subTema) {
 		return ResponseEntity.ok(repository.findAllBySubTemaContainingIgnoreCase(subTema));
 	}
